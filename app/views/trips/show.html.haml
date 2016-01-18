@@ -1,0 +1,38 @@
+.detail-contents
+  .container
+    .row
+      .col-xs-12.detail-view
+        .thumbnail
+          %h3{style: "margin-top: 12px"}
+            = @trip.name
+    .row
+      .col-xs-4.col-md-2.detail-view
+        .thumbnail
+          %h3= @trip.duration
+          %h5 days
+      .col-xs-4.col-md-2.detail-view
+        .thumbnail
+          %h3= @trip.length
+          %h5 km
+      .col-xs-4.col-md-2.detail-view
+        .thumbnail
+          %h3= @trip.cost
+          %h5 $
+      .col-xs-4.col-md-2.detail-view
+        .thumbnail
+          %h3= @trip.temp
+          %h5 °F
+      .col-xs-4.col-md-2.detail-view
+        .thumbnail
+          %h3= @trip.places_count
+          %h5 Stops
+      .col-xs-4.col-md-2.detail-view
+        .thumbnail
+          %h4= @trip.start
+          %h6 to
+          %h4= @trip.goal
+
+.jumbotron.page-footer{style: "background-image: url(#{@trip.image})"}
+  .cover-overlay
+  .container.statement
+    %h4= @trip.discription

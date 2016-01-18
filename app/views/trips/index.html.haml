@@ -1,0 +1,18 @@
+/ Begin page content
+.jumbotron.page-header
+  .cover-overlay
+  .container.statement
+    %h1 Explore The World.
+    %p.lead
+      -# Lorem Ipsum er ganske enkelt fyldtekst fra print- og typografiindustrien.
+
+.main-contents
+  .container
+    .row
+      - @trips.each do |trip|
+        .col-sm-6.col-md-4.trip-view
+          = link_to trip_path(trip) do
+            .thumbnail{style: "background-image: url(#{trip.image})"}
+              .thumb-overlay
+              .caption
+                %h3= trip.name

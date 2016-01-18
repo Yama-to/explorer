@@ -3,12 +3,32 @@
   %head
     %meta{content: "text/html; charset=UTF-8", http: {equiv: "Content-Type"}}/
     %meta{name: "viewport", content: "width=device-width, initial-scale=1, shrink-to-fit=no"}
-    %title Explorer
+    %title Explorer | The breathtaking road trips
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
-    = stylesheet_link_tag    'https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css',  integrity: 'sha384-y3tfxAZXuh4HwSYylfB+J125MxIs6mR5FOHamPBG064zB+AFeWH94NdvaCBm8qnd', crossorigin: 'anonymous'
+    = stylesheet_link_tag    'https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css'
     = javascript_include_tag 'application', 'data-turbolinks-track' => true
-    = javascript_include_tag 'https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js'
-    = javascript_include_tag 'https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/js/bootstrap.min.js', integrity: 'sha384-vZ2WRJMwsjRMW/8U7i6PWi6AlO1L79snBrmgiDpgIWJ82z8eA5lenwvxbMV1PAh7', crossorigin: 'anonymous'
     = csrf_meta_tags
   %body
+    / Fixed navbar
+    %nav.navbar.navbar.navbar-fixed-top
+      .container
+        .navbar-header
+          %a.navbar-brand{href: "/"}
+            %span.fa-stack
+              %i.fa.fa-map-o.fa-stack-1x
+              %i.fa.fa-map-marker.fa-stack-1x
+            %span
+              EXPLORER
+            %span.separater
+              &#9474;
+          %form.navbar-form.navbar-left.navbar-brand.search-form{role: 'search'}
+            .form-group
+              %i.fa.fa-search
+              %input.form-control
+
     = yield
+
+    %footer.footer
+      .container
+        %span
+          %h4 CATEGORIES

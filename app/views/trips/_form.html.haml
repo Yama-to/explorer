@@ -1,0 +1,36 @@
+= form_for @trip do |f|
+  - if @trip.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@trip.errors.count, "error")} prohibited this trip from being saved:"
+      %ul
+        - @trip.errors.full_messages.each do |msg|
+          %li= msg
+
+  .field.form-group
+    = f.label :name
+    = f.text_field :name, class: 'form-control'
+  .field.form-group
+    = f.label :image
+    = f.text_field :image, class: 'form-control'
+  .field.form-group
+    = f.label :discription
+    = f.text_field :discription, class: 'form-control'
+  .field.form-group
+    = f.label :video
+    = f.text_field :video, class: 'form-control'
+  .field.form-group
+    = f.label :duration
+    = f.number_field :duration, class: 'form-control'
+  .field.form-group
+    = f.label :length
+    = f.number_field :length, class: 'form-control'
+  .field.form-group
+    = f.label :cost
+    = f.number_field :cost, class: 'form-control'
+  .field.form-group
+    = f.label :temp
+    = f.number_field :temp, class: 'form-control'
+  .field.form-group
+    = f.label :places_count
+    = f.number_field :places_count, class: 'form-control'
+  %button.btn.btn-default{type: 'submit'} SUBMIT
